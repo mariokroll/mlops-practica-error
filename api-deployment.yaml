@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: 
-        image: gcr.io/icai2025/xxxxx:latest
+        image: gcr.io/icai2025/5001:latest
         ports:
         - containerPort: 50000
 

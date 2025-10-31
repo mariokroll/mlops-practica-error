@@ -1,18 +1,18 @@
 services:
-  mlops-api:
-    image: 
-    container_name:
+  mlops-api-sinerror:
+    image: mariokroll/mlops-api-sinerror
+    container_name: mlops-api-sinerror
     ports:
-      - 
+      - "6000:5000"
     restart: always
 
-  mlops-web:
-    image:
-    container_name:
+  mlops-web-sinerror:
+    image: mariokroll/mlops-web-sinerror
+    container_name: mlops-web-sinerror
     ports:
-      - 
+      - "8080:8501"
     environment:
-      - API_URL=
+      - API_URL=http://mlops-api-sinerror:5000/predict
     depends_on:
-      - mlops-api
+      - mlops-api-sinerror
     restart: always
