@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: mlops-api-sinerror
   labels:
-    app: mlops-api-sinerror
+    app: mlops-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mlops-api-sinerror
+      app: mlops-api
   template:
     metadata:
       labels:
-        app: mlops-api-sinerror
+        app: mlops-api
     spec:
       containers:
       - name: mlops-api-sinerror
-        image: gcr.io/icai2025/mlops-api-sinerror:latest
+        image: gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-api-sinerror:latest
         ports:
         - containerPort: 5000

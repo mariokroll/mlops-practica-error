@@ -8,17 +8,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mlops-web-sinerror
+      app: mlops-web
   template:
     metadata:
       labels:
-        app: mlops-web-sinerror
+        app: mlops-web
     spec:
       containers:
-      - name: mlops-web-sinerror
-        image: gcr.io/icai2025/xxx:latest 
+      - name: mlops-web
+        image: gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-web-sinerror:latest 
         ports:
         - containerPort: 8501
         env:
         - name: API_URL
-          value: http://mlops-api-service:5000/predict 
+          value: http://mlops-api-service:6000/predict 
