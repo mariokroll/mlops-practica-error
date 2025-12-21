@@ -28,12 +28,12 @@ jobs:
 
       - name: Build and Push API Docker Image
         run: |
-          docker build -t gcr.io/${{ vars.GKE_PROJECT_ID }}/mlops-api-sinerror:latest .
-          docker push gcr.io/${{ vars.GKE_PROJECT_ID }}/mlops-api-sinerror:latest
+          docker build -t gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-api-sinerror:latest .
+          docker push gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-api-sinerror:latest
       - name: Build and Push Web Docker Image
         run: |
-          docker build -t gcr.io/${{ vars.GKE_PROJECT_ID }}/mlops-web-sinerror:latest -f Dockerfile.web .
-          docker push gcr.io/${{ vars.GKE_PROJECT_ID }}/mlops-web-sinerror:latest
+          docker build -t gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-web-sinerror:latest -f Dockerfile.web .
+          docker push gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-web-sinerror:latest
       - name: Deploy to GKE
         run: |
           kubectl apply -f api-deployment.yaml
