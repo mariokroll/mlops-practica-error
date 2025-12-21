@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: mlops-api-sinerror
-        image: gcr.io/${{ vars.GCP_PROJECT_ID }}/mlops-api-sinerror:latest
+        image: gcr.io/pf-mlops-icai/mlops-api-sinerror:latest
         ports:
         - containerPort: 5000
