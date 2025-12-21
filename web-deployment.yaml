@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 
+  name: mlops-web-sinerror
   labels:
-    app: 
+    app: mlops-web-sinerror
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 
+      app: mlops-web-sinerror
   template:
     metadata:
       labels:
-        app: 
+        app: mlops-web-sinerror
     spec:
       containers:
-      - name: 
+      - name: mlops-web-sinerror
         image: gcr.io/icai2025/xxx:latest 
         ports:
         - containerPort: 8501
